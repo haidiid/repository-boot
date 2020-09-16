@@ -1,3 +1,10 @@
+spring:
+  liquibase:
+    change-log: classpath:db/db.changelog-master.xml
+    url: jdbc:postgresql://localhost:5432/tweetboot
+    user: postgres
+    password: postgres
+
 ---
 spring:
   datasource:
@@ -16,7 +23,10 @@ spring:
         hbm2ddl:
           auto: validate
         format_sql: true
-
 ---
-server:
-  port: 8080
+spring:
+  kafka:
+    template:
+      default-topic: notification
+    bootstrap-servers:
+      - localhost:9092
