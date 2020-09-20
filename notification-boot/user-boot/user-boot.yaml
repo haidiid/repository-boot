@@ -1,0 +1,36 @@
+server.port: 8082
+
+spring:
+  liquibase:
+    change-log: classpath:db/db.changelog-master.xml
+    url: jdbc:postgresql://localhost:5432/user-boot
+    user: postgres
+    password: postgres
+
+---
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/user-boot
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+---
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: validate
+        format_sql: true
+---
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
