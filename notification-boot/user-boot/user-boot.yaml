@@ -3,14 +3,14 @@ server.port: 8082
 spring:
   liquibase:
     change-log: classpath:db/db.changelog-master.xml
-    url: jdbc:postgresql://localhost:5432/user-boot
+    url: jdbc:postgresql://localhost:5432/userboot
     user: postgres
     password: postgres
 
 ---
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/user-boot
+    url: jdbc:postgresql://localhost:5432/userboot
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
