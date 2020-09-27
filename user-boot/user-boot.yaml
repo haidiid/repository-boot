@@ -45,4 +45,4 @@ security:
         userInfoUri: http://localhost:8083/auth
 
 server:
-  port: 8082
+  port: 8901
