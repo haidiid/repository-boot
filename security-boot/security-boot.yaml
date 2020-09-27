@@ -1,2 +1,8 @@
 server:
   port: 8901
+
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.thoughtmechanix: DEBUG
