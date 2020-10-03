@@ -13,3 +13,8 @@ logging:
     com.netflix: WARN
     org.springframework.web: WARN
     com.thoughtmechanix: DEBUG
+
+---
+security-boot:
+  jwt:
+    secret: w1nd4nurm4l4
