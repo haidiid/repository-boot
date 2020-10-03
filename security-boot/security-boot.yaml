@@ -1,6 +1,13 @@
 server:
   port: 8901
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
+    enabled-by-default: true
+
 logging:
   level:
     com.netflix: WARN
