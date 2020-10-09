@@ -37,8 +37,8 @@ management:
 
 logging:
   level:
-    com.netflix: WARN
-    org.springframework.web: WARN
+    com.netflix: INFO
+    org.springframework.web: INFO
     com.thoughtmechanix: DEBUG
 
 ---
