@@ -4,9 +4,16 @@ server:
 spring:
   liquibase:
     change-log: classpath:db/db.changelog-master.xml
-    url: jdbc:postgresql://localhost:5432/securityboot
+    url:
     user: postgres
     password: postgres
+
+flyway:
+  url: jdbc:postgresql://localhost:5432/securityboot
+  schemas: public
+  user: postgres
+  password: postgres
+  locations: classpath:db
 
 ---
 spring:
