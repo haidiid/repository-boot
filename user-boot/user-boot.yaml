@@ -46,8 +46,8 @@ security:
     resource:
       token-info-uri: http://localhost:8901/oauth/check_token
     client:
-      client-id: resourceserver
-      client-secret: resourceserversecret
+      client-id: w1nd4nurm4l4
+      client-secret: w1nd4nurm4l4
 
 server:
   port: 8082
