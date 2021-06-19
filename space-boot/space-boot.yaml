@@ -8,7 +8,7 @@ spring:
 ---
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/spaceboot
+    url: jdbc:postgresql://localhost:10001/spaceboot
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
