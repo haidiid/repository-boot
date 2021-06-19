@@ -1,7 +1,7 @@
 spring:
   liquibase:
     change-log: classpath:db/db.changelog-master.xml
-    url: jdbc:postgresql://localhost:5432/spaceboot
+    url: jdbc:postgresql://localhost:10001/spaceboot
     user: postgres
     password: postgres
 
