@@ -1,0 +1,28 @@
+spring:
+  liquibase:
+    change-log: classpath:db/db.changelog-master.xml
+    url: jdbc:postgresql://localhost:5432/spaceboot
+    user: postgres
+    password: postgres
+
+---
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spaceboot
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+---
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: validate
+        format_sql: true
+
+server:
+  port: 8083
