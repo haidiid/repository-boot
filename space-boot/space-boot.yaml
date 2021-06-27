@@ -24,5 +24,10 @@ spring:
           auto: validate
         format_sql: true
 
+---
+spring:
+  messages:
+    basename: i18n/messages
+
 server:
   port: 8083
