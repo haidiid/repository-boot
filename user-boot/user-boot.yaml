@@ -33,7 +33,7 @@ spring:
 ---
 spring:
   messages:
-    basename: messages
+    basename: i18n/messages
 
 # defines tomcat port
 server:
