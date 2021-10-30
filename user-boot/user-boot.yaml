@@ -1,19 +1,25 @@
+# defines database migration
+# supports only for PostgreSQL. Open for more vast SQL database support in the future
 spring:
-  flyway:
-    url: jdbc:postgresql://localhost:5432/userboot
-    schemas: public
+  liquibase:
+    url: jdbc:postgresql://localhost:5432/user_boot
+    default-schemas: public
     user: postgres
     password: postgres
-    locations: classpath:db
+    driver-class-name: org.postgresql.Driver
+    change-log: classpath:db
 
+# defines database connection into local cluster
 ---
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/userboot
+    url: jdbc:postgresql://localhost:5432/user_boot
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
 
+# defines jpa properties
+# supports logging for sql and only support with PostgreSQL
 ---
 spring:
   jpa:
@@ -24,35 +30,28 @@ spring:
         hbm2ddl:
           auto: validate
         format_sql: true
+
 ---
 spring:
-  kafka:
-    template:
-      default-topic: notification
-    bootstrap-servers:
-      - localhost:9092
+  messages:
+    basename: i18n/messages
 
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
-security:
-  oauth2:
-    resource:
-      token-info-uri: http://localhost:8901/oauth/check_token
-    client:
-      client-id: w1nd4nurm4l4
-      client-secret: w1nd4nurm4l4
-
+# defines tomcat port
 server:
-  port: 8082
+  port: 8081
 
+# defines logging
+# define logback logging into console and rollover file by day and file size
+# This config will override https://github.com/spring-projects/spring-boot/blob/v2.2.2.RELEASE/spring-boot-project/spring-boot/src/main/resources/org/springframework/boot/logging/logback/
+# Reference: https://docs.spring.io/spring-boot/docs/2.2.2.RELEASE/reference/html/spring-boot-features.html#boot-features-logging
 logging:
+  file:
+    max-size: 100KB
+    total-size-cap: 100MB
+    name: logs/configuration-boot.log
+  pattern:
+    rolling-file-name: 'logs/%d{yyyy/MMMM}/user-boot.%d{yyyy-MM-dd}.%i.log.gz'
+    dateformat: yyyy-MM-dd HH:mm:ss.SSSZ
   level:
     com.netflix: WARN
     org.springframework.web: WARN
