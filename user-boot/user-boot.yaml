@@ -33,7 +33,7 @@ spring:
 ---
 spring:
   messages:
-    basename: classpath:messages
+    basename: messages
 
 # defines tomcat port
 server:
@@ -47,7 +47,7 @@ logging:
   file:
     max-size: 100KB
     total-size-cap: 100MB
-    name: logs/configuration-boot.log
+    name: logs/user-boot.log
   pattern:
     rolling-file-name: 'logs/%d{yyyy/MMMM}/user-boot.%d{yyyy-MM-dd}.%i.log.gz'
     dateformat: yyyy-MM-dd HH:mm:ss.SSSZ
