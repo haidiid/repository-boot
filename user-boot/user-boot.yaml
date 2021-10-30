@@ -3,10 +3,9 @@
 spring:
   liquibase:
     url: jdbc:postgresql://localhost:5432/user_boot
-    default-schemas: public
+    default-schema: public
     user: postgres
     password: postgres
-    driver-class-name: org.postgresql.Driver
     change-log: classpath:db
 
 # defines database connection into local cluster
