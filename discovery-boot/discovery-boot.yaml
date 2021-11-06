@@ -1,0 +1,20 @@
+# @2021, bysrkh. Cirebon
+
+# define tomcat server port
+server:
+  port: 8889
+# define eureka server instance hostname
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    # define not to register this instance to eureka, because this instance is itself
+    registerWithEureka: false
+    # define not to cache service registry information to itself, because this instance is the one which publish the registry information :D
+    fetchRegistry: false
+    # define registry information publishing API based on eureka.instance.hostname and server.port properties
+    serviceUrl:
+      defaultZone: 'http://${eureka.instance.hostname}:${server.port}/eureka'
+  # define startup preparation for eureka being ready to publish service registry information
+  server:
+    waitTimeInMsWhenSyncEmpty: 0

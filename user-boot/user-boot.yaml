@@ -1,3 +1,5 @@
+# @2021, bysrkh. Cirebon
+
 # defines database migration
 # supports only for PostgreSQL. Open for more vast SQL database support in the future
 spring:
@@ -30,10 +32,12 @@ spring:
           auto: validate
         format_sql: true
 
+# define message resource bundles which is determined by running JVM application's classpath
+# Reference: src/main/resources/i18n/messages*.properties
 ---
 spring:
   messages:
-    basename: i18n/messages, i18n/ValidationMessages
+    basename: i18n/messages
 
 # defines tomcat port
 server:
