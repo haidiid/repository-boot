@@ -43,6 +43,14 @@ spring:
 server:
   port: 8081
 
+# define the service is addressed as registered service to eureka instance
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: 'http://localhost:8889/eureka'
+
 # defines logging
 # define logback logging into console and rollover file by day and file size
 # This config will override https://github.com/spring-projects/spring-boot/blob/v2.2.2.RELEASE/spring-boot-project/spring-boot/src/main/resources/org/springframework/boot/logging/logback/
