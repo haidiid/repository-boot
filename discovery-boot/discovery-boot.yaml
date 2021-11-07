@@ -18,3 +18,9 @@ eureka:
   # define startup preparation for eureka being ready to publish service registry information
   server:
     waitTimeInMsWhenSyncEmpty: 0
+---
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
