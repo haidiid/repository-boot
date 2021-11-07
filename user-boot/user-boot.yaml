@@ -51,6 +51,14 @@ eureka:
     serviceUrl:
       defaultZone: 'http://localhost:8889/eureka'
 
+# define the usage of spring load balancer instead of ribbon
+---
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+
 # defines logging
 # define logback logging into console and rollover file by day and file size
 # This config will override https://github.com/spring-projects/spring-boot/blob/v2.2.2.RELEASE/spring-boot-project/spring-boot/src/main/resources/org/springframework/boot/logging/logback/

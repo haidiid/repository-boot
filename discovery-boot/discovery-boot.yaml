@@ -18,6 +18,8 @@ eureka:
   # define startup preparation for eureka being ready to publish service registry information
   server:
     waitTimeInMsWhenSyncEmpty: 0
+
+# define the usage of spring load balancer instead of ribbon
 ---
 spring:
   cloud:
