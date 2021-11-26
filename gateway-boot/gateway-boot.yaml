@@ -1,0 +1,27 @@
+# @2021, bysrkh. Cirebon
+
+# define tomcat server port
+server:
+  port: 8890
+# define eureka server instance hostname
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: 'http://localhost:8889/eureka'
+
+# define the usage of spring load balancer instead of ribbon
+---
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+---
+spring:
+  cloud:
+    gateway:
+      discovery.locator:
+        enabled: true
+        lowerCaseServiceId: true
