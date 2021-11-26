@@ -22,6 +22,16 @@ spring:
 spring:
   cloud:
     gateway:
-      discovery.locator:
-        enabled: true
-        lowerCaseServiceId: true
+      routes:
+        - id: user-boot
+          uri: lb:user-boot
+          predicates:
+            - Path=/user/**
+          filters:
+            - RewritePath=/user/(?<path.*), /$\{path}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
