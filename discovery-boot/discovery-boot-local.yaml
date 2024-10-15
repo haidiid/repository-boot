@@ -3,7 +3,8 @@ server.port: 8100
 spring.loadbalancer.ribbon: false
 eureka:
   # tells the hostname of discovery boot hostname
-  instance.hostname: localhost
+  instance:
+    hostname: localhost
   client:
     # Discovery Server is a normal spring boot app.
     # This tells to not register this Spring Boot app to Discover Server cz it's Discovery Server

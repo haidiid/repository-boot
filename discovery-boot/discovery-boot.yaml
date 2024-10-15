@@ -14,7 +14,7 @@ eureka:
     fetchRegistry: false
     # define registry information publishing API based on eureka.instance.hostname and server.port properties
     serviceUrl:
-      defaultZone: http:\/\/${eureka.instance.hostname}:${server.port}/eureka
+      defaultZone: 'http://${eureka.instance.hostname}:${server.port}/eureka'
   # define startup preparation for eureka being ready to publish service registry information
   server:
     waitTimeInMsWhenSyncEmpty: 0
