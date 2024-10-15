@@ -16,4 +16,5 @@ eureka:
     fetch-registry: true
     # it's a comma-separated value which provides the list of Discovery Server
     # to a client communciate with
-    service-url.defaultZone: http://localhost:8100/eureka/
+    service-url:
+      defaultZone: http://localhost:8100/eureka/
