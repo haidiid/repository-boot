@@ -3,8 +3,6 @@
 
 server.port: 8401
 
-# application id for registering in the Discovery Server
-spring.application.name: notification-boot
 # by default deprecated load balancer called ribbon is enabled so set it disabled.
 spring.loadbalancer.ribbon: false
 eureka:
