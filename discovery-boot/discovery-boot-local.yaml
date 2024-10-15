@@ -13,7 +13,7 @@ eureka:
     fetch-registry: false
     # it's a comma-separated value which provides the list of Discovery Server
     # to a client communciate with
-    service-url.defaultZone: 'http://{eureka.instance.hostname}:${server.port}/eureka/'
+    service-url.defaultZone: 'http://${eureka.instance.hostname}:${server.port}/eureka/'
     server.waitTimeInMsWhenSyncEmpty: 5
 ---
 spring.cloud.loadbalancer.ribbon.enabled: false
