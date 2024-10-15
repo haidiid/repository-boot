@@ -3,3 +3,19 @@
 
 server.port: 8401
 
+# application id for registering in the Discovery Server
+spring.application.name: notification-boot
+# by default deprecated load balancer called ribbon is enabled so set it disabled.
+spring.loadbalancer.ribbon: false
+eureka:
+  client:
+    # register the actual physical address/ip rather than a hostname
+    preferIpAddress: true
+    # The client is a normal Spring Boot application.
+    # Tell this to register to Discovery Boot.
+    register-with-eureka: true
+    # enable Spring Load Balancer local cache in the client
+    fetch-registry: true
+    # it's a comma-separated value which provides the list of Discovery Server
+    # to a client communciate with
+    service-url.defaultZone: localhost:8100/eureka/
