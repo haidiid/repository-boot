@@ -17,7 +17,7 @@ eureka:
       defaultZone: 'http://${eureka.instance.hostname}:${server.port}/eureka'
   # define startup preparation for eureka being ready to publish service registry information
   server:
-    waitTimeInMsWhenSyncEmpty: 0
+    waitTimeInMsWhenSyncEmpty: 5
 
 # define the usage of spring load balancer instead of ribbon
 ---
